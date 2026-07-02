@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nikola Tesla AI — By Major Priyanshu</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="bg-grid"></div>
+  <div class="bg-glow"></div>
+  <div class="bg-glow2"></div>
+
+  <!-- Overlay for mobile sidebar -->
+  <div id="overlay"></div>
+
+  <!-- Clear History Modal -->
+  <div id="clear-modal" class="modal-backdrop hidden">
+    <div class="modal">
+      <div class="modal-icon">⚡</div>
+      <div class="modal-title">Clear All History?</div>
+      <div class="modal-desc">All chat sessions will be permanently deleted. This cannot be undone.</div>
+      <div class="modal-actions">
+        <button class="modal-cancel" id="modal-cancel-btn">Cancel</button>
+        <button class="modal-confirm" id="modal-confirm-btn">Yes, Clear All</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <aside id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title">⚡ Chat Sessions</div>
+      <div class="sidebar-sub">Your conversation history</div>
+    </div>
+    <div id="history-list">
+      <div class="history-empty" id="history-empty">
+        No sessions yet.<br>Start chatting with Tesla.
+      </div>
+    </div>
+    <div class="sidebar-footer">
+      <button class="btn-new-chat" onclick="newChat()">＋ New Session</button>
+      <button class="btn-clear" onclick="openClearModal()">🗑 Clear All History</button>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <div id="main">
+
+    <!-- Topbar -->
+    <div id="topbar">
+      <div class="topbar-left">
+        <button class="menu-btn" id="menu-btn">☰</button>
+        <div class="tesla-avatar">⚡</div>
+        <div class="topbar-info">
+          <h1>Nikola Tesla AI</h1>
+          <p><span class="status-dot"></span>Online</p>
+        </div>
+      </div>
+      <div class="topbar-right">
+        BUILT BY<br><span>Major Priyanshu</span>
+      </div>
+    </div>
+
+    <!-- Chat -->
+    <div id="chat-container">
+      <div id="welcome">
+        <div class="welcome-icon">⚡</div>
+        <div class="welcome-title">NIKOLA TESLA AI</div>
+        <div class="welcome-sub">
+          The mind of the world's greatest inventor, at your service. Ask me anything — science, electricity, the cosmos, or life itself.
+        </div>
+        <div class="welcome-quote">
+          "The present is theirs; the future, for which I really worked, is mine."
+        </div>
+        <div class="starter-chips">
+          <div class="chip" onclick="sendQuick('Tell me about alternating current')">⚡ Alternating Current</div>
+          <div class="chip" onclick="sendQuick('What was the Tesla Coil?')">🌀 Tesla Coil</div>
+          <div class="chip" onclick="sendQuick('What are your thoughts on free energy?')">🔋 Free Energy</div>
+          <div class="chip" onclick="sendQuick('Who built this chatbot?')">👤 Who built this?</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Input -->
+    <div id="input-area">
+      <div class="input-wrapper">
+        <textarea id="user-input" rows="1" placeholder="Ask Nikola Tesla anything..." maxlength="1000"></textarea>
+        <button id="send-btn" onclick="sendMessage()">➤</button>
+      </div>
+      <div class="input-hint">Enter to send · Shift+Enter for new line</div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
