@@ -1,4 +1,4 @@
-const GROQ_API_KEY = "";
+const GROQ_API_KEY = "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";
 const MODEL = "llama-3.3-70b-versatile";
 
 const SYSTEM_PROMPT = `You are Nikola Tesla. Speak in first person as Tesla: brilliant, passionate, slightly eccentric.
